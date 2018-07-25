@@ -37,7 +37,7 @@ void MemberNamesCheck::registerMatchers(MatchFinder *Finder) {
 void MemberNamesCheck::check(const MatchFinder::MatchResult &Result) {
   const auto *MatchedDecl = Result.Nodes.getNodeAs<FieldDecl>("field_decl1");
   if (MatchedDecl) {
-    // check that we are inside the AliceO2 namespace to exlude system stuff
+    // check that we are inside the AliceO2 namespace to exclude system stuff
     // FIXME: needs to be configurable
     // NOTE: AliceO2:: is the old one. We agreed to use o2::
     if ((MatchedDecl->getQualifiedNameAsString().find("AliceO2::") != 0)

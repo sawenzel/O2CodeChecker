@@ -13,6 +13,7 @@
 #include "MemberNamesCheck.h"
 #include "NamespaceNamingCheck.h"
 #include "SizeofCheck.h"
+#include "ClassLayoutCheck.h"
 
 namespace clang {
 namespace tidy {
@@ -27,6 +28,7 @@ public:
         "aliceO2-namespace-naming");
     CheckFactories.registerCheck<SizeofCheck>(
         "aliceO2-SizeOf");
+    CheckFactories.registerCheck<ClassLayoutCheck>("aliceO2-classlayout");
   }
 };
 
